@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.AspNetCore.Mvc.Rendering;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using McvCrud.Data;
 using McvCrud.Models;
@@ -19,15 +14,27 @@ namespace McvCrud.Controllers
             _context = context;
         }
 
+        //Pesquisa
+        
+
         // GET: Cadastros
-        public async Task<IActionResult> Index()
+        public async Task<IActionResult> Index(string Pesquisa = "")
         {
               return _context.Cadastro != null ? 
                           View(await _context.Cadastro.ToListAsync()) :
                           Problem("Entity set 'McvCrudContext.Cadastro'  is null.");
-        } 
-       
 
+                var q = _context.Cadastro.AsQueryable();
+            if (!string.IsNullOrEmpty(Pesquisa))
+                q = q.Where(c => c.Name.Contains(Pesquisa));
+            q = q.OrderBy(c => c.Name);
+
+            return View(q.ToList());
+
+        }
+
+        
+       
         // GET: Cadastros/Details/5
         public async Task<IActionResult> Details(int? id)
         {

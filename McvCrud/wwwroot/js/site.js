@@ -1,5 +1,4 @@
-﻿// Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿//TRADUÇÃO DATATABLES
 
 $(document).ready(function () {
     $('#table-cadastro').DataTable({
@@ -32,6 +31,7 @@ $(document).ready(function () {
     })
 });
 
+//BUSCA CEP
 
 const cep = document.querySelector("#cep")
 
@@ -59,7 +59,11 @@ cep.addEventListener("blur", (e) => {
             response.json()
                 .then(data => showData(data))
         })
-        .catch(e => console.log('Deu erro: ' + e, MessageEvent))
+        .catch(e => console.log('Erro: ' + e, MessageEvent))
 
 
 })
+
+
+
+      

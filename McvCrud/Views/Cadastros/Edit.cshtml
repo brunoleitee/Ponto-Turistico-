@@ -4,9 +4,9 @@
     ViewData["Title"] = "Edit";
 }
 
-<h1>Edit</h1>
+<h1>Editar</h1>
 
-<h4>Cadastro</h4>
+
 <hr />
 <div class="row">
     <div class="col-md-4">
@@ -53,14 +53,13 @@
                 <input asp-for="CEP" class="form-control" />
                 <span asp-validation-for="CEP" class="text-danger"></span>
             </div>
-            <div class="form-group">
-                <input type="submit" value="Save" class="btn btn-primary" />
-            </div>
+            
         </form>
     </div>
 </div>
 
 <div>
+    <input type="submit" value="Salvar" class="btn btn-success" /> |
     <a class="btn btn-primary" asp-action="Index" class="btn btn-primary">Voltar</a>
 </div>
 

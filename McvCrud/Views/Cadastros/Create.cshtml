@@ -16,7 +16,7 @@
 
             <div class="form-group">
                 <label asp-for="CEP" class="control-label">CEP</label>
-                <input asp-for="CEP" type="text" name="CEP" id="cep" class="form-control" placeholder="CEP" aria-label="CEP" aria-describedby="consultar-cep">
+                <input asp-for="CEP" type="text" name="CEP" id="cep" class="form-control"  aria-label="CEP" aria-describedby="consultar-cep">
                 <span asp-validation-for="CEP" class="text-danger"></span>
                 <div class="input-group-append">
                     
@@ -91,10 +91,10 @@
             </div>
            
             
-            <br />
+          <hr />
             <div class="form-group">
                 <div>
-                    <input class="btn btn-primary col-md-4" type="submit" value="Salvar"  />
+                    <input class="btn btn-success col-md-4" type="submit" value="Salvar"  />
                     <a class="btn btn-primary col-md-4" asp-action="Index" asp-controller="Home">Voltar</a>
                 </div>
             </div>
