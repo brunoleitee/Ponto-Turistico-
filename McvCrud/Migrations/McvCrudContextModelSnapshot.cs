@@ -29,12 +29,11 @@ namespace McvCrud.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Cidade")
+                    b.Property<string>("CEP")
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<DateTimeOffset>("Data")
-                        .IsRequired()
-                        .HasColumnType("getDate");
+                    b.Property<string>("Cidade")
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Descricao")
                         .HasColumnType("nvarchar(250)");
@@ -42,7 +41,8 @@ namespace McvCrud.Migrations
                     b.Property<string>("Estado")
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<string>("Nome")
+                    b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Numero")
@@ -50,7 +50,7 @@ namespace McvCrud.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Referencia")
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Rua")
                         .HasColumnType("nvarchar(250)");

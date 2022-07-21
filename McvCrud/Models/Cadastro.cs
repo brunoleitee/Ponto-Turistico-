@@ -6,7 +6,7 @@ namespace McvCrud.Models
 {
     public class Cadastro
     {
-        
+
         public int Id { get; set; }
 
         [DisplayName("Nome")]
@@ -31,8 +31,8 @@ namespace McvCrud.Models
         public string Descricao { get; set; }
         [Column(TypeName = "nvarchar(250)")]
 
-        [DisplayFormat(ApplyFormatInEditMode =true, DataFormatString = "{0:yyyy-MM-dd HH:mm}")]
-        public DateTime? Data { get; set; }
+        public string CEP {get; set;} 
+        
 
 
     }

@@ -25,7 +25,8 @@ namespace McvCrud.Controllers
               return _context.Cadastro != null ? 
                           View(await _context.Cadastro.ToListAsync()) :
                           Problem("Entity set 'McvCrudContext.Cadastro'  is null.");
-        }
+        } 
+       
 
         // GET: Cadastros/Details/5
         public async Task<IActionResult> Details(int? id)
@@ -56,7 +57,7 @@ namespace McvCrud.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("Id,Name,Estado,Cidade,Rua,Numero,Referencia,Descricao,Data")] Cadastro cadastro)
+        public async Task<IActionResult> Create([Bind("Id,Name,Estado,Cidade,Rua,Numero,Referencia,Descricao,CEP")] Cadastro cadastro)
         {
             if (ModelState.IsValid)
             {
@@ -84,11 +85,10 @@ namespace McvCrud.Controllers
         }
 
         // POST: Cadastros/Edit/5
-        // To protect from overposting attacks, enable the specific properties you want to bind to.
-        // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
+        
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Estado,Cidade,Rua,Numero,Referencia,Descricao,Data")] Cadastro cadastro)
+        public async Task<IActionResult> Edit(int id, [Bind("Id,Name,Estado,Cidade,Rua,Numero,Referencia,Descricao,CEP")] Cadastro cadastro)
         {
             if (id != cadastro.Id)
             {

@@ -4,7 +4,7 @@
 
 namespace McvCrud.Migrations
 {
-    public partial class InitialCreate : Migration
+    public partial class Cadastro : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {
@@ -14,14 +14,14 @@ namespace McvCrud.Migrations
                 {
                     Id = table.Column<int>(type: "int", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Name = table.Column<string>(type: "nvarchar(max)", nullable: true),
+                    Name = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     Estado = table.Column<string>(type: "nvarchar(250)", nullable: true),
                     Cidade = table.Column<string>(type: "nvarchar(250)", nullable: true),
                     Rua = table.Column<string>(type: "nvarchar(250)", nullable: true),
                     Numero = table.Column<string>(type: "nvarchar(250)", nullable: false),
-                    Referencia = table.Column<string>(type: "nvarchar(20)", nullable: true),
+                    Referencia = table.Column<string>(type: "nvarchar(250)", nullable: true),
                     Descricao = table.Column<string>(type: "nvarchar(250)", nullable: true),
-                    Data = table.Column<string>(type: "DateTime", nullable: false)
+                    CEP = table.Column<string>(type: "nvarchar(250)", nullable: true)
                 },
                 constraints: table =>
                 {

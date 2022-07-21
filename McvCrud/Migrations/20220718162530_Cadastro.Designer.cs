@@ -11,8 +11,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace McvCrud.Migrations
 {
     [DbContext(typeof(McvCrudContext))]
-    [Migration("20220624125138_InitialCreate")]
-    partial class InitialCreate
+    [Migration("20220718162530_Cadastro")]
+    partial class Cadastro
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -31,11 +31,10 @@ namespace McvCrud.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"), 1L, 1);
 
-                    b.Property<string>("Cidade")
+                    b.Property<string>("CEP")
                         .HasColumnType("nvarchar(250)");
 
-                    b.Property<string>("Data")
-                        .IsRequired()
+                    b.Property<string>("Cidade")
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Descricao")
@@ -45,6 +44,7 @@ namespace McvCrud.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Name")
+                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("Numero")
@@ -52,7 +52,7 @@ namespace McvCrud.Migrations
                         .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Referencia")
-                        .HasColumnType("nvarchar(20)");
+                        .HasColumnType("nvarchar(250)");
 
                     b.Property<string>("Rua")
                         .HasColumnType("nvarchar(250)");

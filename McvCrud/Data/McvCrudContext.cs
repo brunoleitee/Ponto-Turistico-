@@ -9,6 +9,7 @@ namespace McvCrud.Data
         {
         }
 
-        public DbSet<McvCrud.Models.Cadastro> Cadastro { get; set; }
+        public DbSet<Models.Cadastro> Cadastro { get; set; }
+      
     }
 }
